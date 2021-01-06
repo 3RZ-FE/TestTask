@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+a {
+    color: unset;
+    text-decoration: unset;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 14px;
+}
+
+.content {
+    padding: 3rem 7rem;
+}
+
+.content__title {
+    margin-bottom: 2rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content__back {
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.content__date {
+    text-align: right;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 1.5rem;
+}
