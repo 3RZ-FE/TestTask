@@ -8,7 +8,7 @@ class ProductsService
 {
     public function getProductsList(): array
     {
-        $db = new \PDO($_ENV['DB_DSN'], $_ENV['MYSQL_USER'], $_ENV['MYSQL_PASSWORD']);
+        $db = new \PDO(getenv('DB_DSN'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'));
 
         $sql = "SELECT * FROM products";
 

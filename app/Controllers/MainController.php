@@ -11,11 +11,11 @@ class MainController
 {
     public function actionInitializeDatabase()
     {
-        $db = new \PDO($_ENV['DB_DSN'], $_ENV['MYSQL_USER'], $_ENV['MYSQL_PASSWORD']);
+        $db = new \PDO(getenv('DB_DSN'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'));
 
         $jsonLoader = new JsonLoader;
 
-        $files = explode(' ', $_ENV['DB_FILES']);
+        $files = explode(' ', getenv('DB_FILES'));
 
         foreach ($files as $file) {
             $jsonLoader->loadData($db, dirname(__DIR__).'/data/'.$file);

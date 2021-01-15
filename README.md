@@ -1,13 +1,30 @@
 # test-task
 
-## Запуск приложения
-Приложение собирается с помощью Docker-контейнеров
-
+### Docker
 ```
 docker-compose up
 ```
 
-После сборки оно доступно по адресу [http://localhost/main/bloglist](http://localhost/main/bloglist)
+### Vagrant
+Перед запуском ВМ установить плагин: [Vagrant Docker Compose Provisioner](https://github.com/leighmcculloch/vagrant-docker-compose)
+
+Команда для установки:
+```
+vagrant plugin install vagrant-docker-compose
+```
+После собрать и запустить ВМ:
+```
+vagrant up
+```
+
+Если порт 80 на хосте занят (запущен какой-нибудь другой сервер), можно поменять в Vagrantfile:
+```
+config.vm.network(:forwarded_port, guest: 80, host: 80)
+```
+
+### Запуск
+
+После сборки приложение доступно по адресу [http://localhost/main/bloglist](http://localhost/main/bloglist)
 
 ## phpMyAdmin
 Для удобства просмотра текущего состояния БД добавлен контейнер phpMyAdmin по адресу [http://localhost:8080/](http://localhost:8080/)

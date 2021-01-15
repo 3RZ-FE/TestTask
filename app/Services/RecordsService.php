@@ -10,7 +10,7 @@ class RecordsService
 
     public function __construct()
     {
-        $this->db = new \PDO($_ENV['DB_DSN'], $_ENV['MYSQL_USER'], $_ENV['MYSQL_PASSWORD']);
+        $this->db = new \PDO(getenv('DB_DSN'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'));
     }
 
     public function getRecordsList(array $filters, int $limit = 10): array
